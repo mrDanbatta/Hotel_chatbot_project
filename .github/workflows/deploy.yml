@@ -9,8 +9,8 @@ on:
 
   env:
     # Docker Hub repos
-    BACKEND_IMAGE: ${{ secrets.DOCKERUSERNAME }}/hotel-chatbot-backend
-    FRONTEND_IMAGE: ${{ secrets.DOCKERUSERNAME }}/hotel-chatbot-frontend
+    BACKEND_IMAGE: ${{ secrets.DOCKER_USERNAME }}/hotel-chatbot-backend
+    FRONTEND_IMAGE: ${{ secrets.DOCKER_USERNAME }}/hotel-chatbot-frontend
 
 jobs:
   build-test-push:
@@ -31,8 +31,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERUSERNAME }}
-          password: ${{ secrets.DOCKERPASSWORD }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Create smart tags for the images
       # latest for main branch, short SHA  for tracability, vX.Y.Z for releases
