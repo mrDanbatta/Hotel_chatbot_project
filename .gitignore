@@ -1,0 +1,5 @@
+/Data
+.env
+/RAG_env
+travel_assistant_notebook.ipynb
+docker-compose.yml

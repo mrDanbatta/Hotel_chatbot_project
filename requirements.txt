@@ -1,0 +1,15 @@
+pandas
+pinecone-client
+openai
+langchain-classic
+langchain_community
+langchain_openai
+langchain_community
+langchain_core
+langchain_pinecone
+langchain_text_splitters
+langchain
+streamlit
+fastapi
+uvicorn
+requests
