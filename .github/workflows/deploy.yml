@@ -7,10 +7,10 @@ on:
       - 'v*.*.*'
   workflow_dispatch: {}
 
-  env:
-    # Docker Hub repos
-    BACKEND_IMAGE: ${{ secrets.DOCKER_USERNAME }}/hotel-chatbot-backend
-    FRONTEND_IMAGE: ${{ secrets.DOCKER_USERNAME }}/hotel-chatbot-frontend
+env:
+  # Docker Hub repos
+  BACKEND_IMAGE: ${{ secrets.DOCKER_USERNAME }}/hotel-chatbot-backend
+  FRONTEND_IMAGE: ${{ secrets.DOCKER_USERNAME }}/hotel-chatbot-frontend
 
 jobs:
   build-test-push:
