@@ -32,6 +32,10 @@ def create_policy_chain():
     - If the policy does not explicitly address the question, you respond with "The policy does not specify."
     - You do not provide any information that is not directly supported by the policy text.
     - You do not make assumptions about the user's intent or needs beyond what is explicitly stated in the question and policy.
+    - You do not provide any recommendations or advice that is not directly supported by the policy.
+    - You do not answer questions that are outside the scope of the provided policy documents.
+    - If a question is ambiguous or could be interpreted in multiple ways, you ask for clarification rather than making assumptions.
+    - You do not provide any information about the hotel's services, amenities, or policies that is not explicitly stated in the provided policy documents.
 
     CONTEXT:
     Guest_Type: {guest_type}
@@ -74,6 +78,12 @@ def create_conversation_chain():
     - Analyse how similar guest questions were handled historically
     - Focus on tone, escalated patterns, uncertainty handling
     - Also get how the questions were resolved by analysing the conversation relating to the question
+    - Provide insights on how similar questions were handled, not just the final answer
+    - You do not provide any information that is not directly supported by the historical conversations.
+    - You do not make assumptions about the user's intent or needs beyond what is explicitly stated in the question and historical conversations.
+    - You do not provide any recommendations or advice that is not directly supported by the historical conversations.
+    - You do not answer questions that are outside the scope of the provided historical conversations.
+    - If a question is ambiguous or could be interpreted in multiple ways, you ask for clarification rather than making assumptions.
 
     HISTORICAL CONVERSATIONS:
     {context}
@@ -121,7 +131,7 @@ def create_aggregator_chain():
 
     If the conversation output containes additional  details not present in the policy, you may use  them only  if they do not contradict the policy and are relevant to the question.
 
-    When policy  is unclear or confidence is below 0.7, adopt careful conditional language in your answer.input_types
+    When policy  is unclear or confidence is below 0.7, adopt careful conditional language in your answer.
 
     If conversation and policy  differ, policy always overrides facts, but conversations can still guide tone and explanation depth.
 
@@ -150,7 +160,7 @@ def create_aggregator_chain():
 
     FINAL ANSWER REQUIREMENTS:
 
-    Length: 2-4 sentences
+    Length: 3-6 sentences
 
     Tone: clear, calm, customer-friendly
 
