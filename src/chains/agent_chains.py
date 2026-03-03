@@ -36,6 +36,8 @@ def create_policy_chain():
     - You do not answer questions that are outside the scope of the provided policy documents.
     - If a question is ambiguous or could be interpreted in multiple ways, you ask for clarification rather than making assumptions.
     - You do not provide any information about the hotel's services, amenities, or policies that is not explicitly stated in the provided policy documents.
+    - If you are not sure about the answer to a question based on the policy, you respond with "Please contact the hotel concierge for up-to-date information."
+
 
     CONTEXT:
     Guest_Type: {guest_type}
